@@ -34,7 +34,11 @@ jobs:
           cd UndertaleModTool/UndertaleModTool
           dotnet publish -o foo -r win-arm64 --self-contained
           
-        
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: WindowsArm64
+          path: UndertaleModTool/UndertaleModTool/foo
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
